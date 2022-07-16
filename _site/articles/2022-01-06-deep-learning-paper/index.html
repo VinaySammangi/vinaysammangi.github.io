@@ -1,0 +1,374 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Classification and pattern extraction of incidents: a deep learning-based approach - Home</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Home">
+<meta property="og:title" content="Classification and pattern extraction of incidents: a deep learning-based approach">
+
+
+  <link rel="canonical" href="http://localhost:4000/articles/2022-01-06-deep-learning-paper/">
+  <meta property="og:url" content="http://localhost:4000/articles/2022-01-06-deep-learning-paper/">
+
+
+
+  <meta property="og:description" content="We proposes a deep learning-based prediction model to predict the incident outcomes using the hidden information underlying the data.">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2022-01-06T00:00:00-08:00">
+
+
+
+
+
+
+  <meta name="google-site-verification" content="3hdu0GcCfjZ6WbPpApjcdcEGjsCPDcDn1QLtBm-DRBg" />
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Home Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<meta name="theme-color" content="#ffffff">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon/site.webmanifest">
+<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+<meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<script type="application/ld+json"> 
+{ 
+"@context": "http://schema.org",
+"@type": "Person",
+"name": "R. Stuart Geiger",
+"email": "mailto:stuart@stuartgeiger.com",
+"image": "http://stuartgeiger.com/images/oban3.jpg",
+"jobTitle": "Ethnographer",
+"name": "R. Stuart Geiger",
+"affiliation": "University of California, Berkeley",
+"alumniOf": "University of California, Berkeley",
+"birthPlace": "Nacogdoches County, TX",
+"gender": "male",
+"honorificSuffix": "PhD",
+"nationality": "United States",
+"url": "http://www.stuartgeiger.com",
+"sameAs" : [
+"http://twitter.com/staeiou",
+"http://github.com/staeiou",
+"https://orcid.org/0000-0001-7215-0532"] 
+} </script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="http://localhost:4000/">Home</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/portfolio/">Portfolio</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/year-archive/">Blogs</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/articles/">Publications</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/resume/">CV</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+    <script type="application/ld+json">
+    {
+	"@context": "http://schema.org/",
+	"@type": "CreativeWork",
+	"author": "R. Stuart Geiger",
+        "name": "Classification and pattern extraction of incidents: a deep learning-based approach",
+	"datePublished": "2022-01-06 00:00:00 -0800",
+	"description": "We proposes a deep learning-based prediction model to predict the incident outcomes using the hidden information underlying the data."
+    }
+    </script>
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+
+
+
+<div>
+
+  <div class="author__avatar">
+    
+    	<img src="http://localhost:4000/assets//images/vinay_pic.png" class="author__avatar" alt="Vinay Sammangi">
+    
+  </div>
+
+  <div class="author__content">
+    <h3 class="author__name">Vinay Sammangi</h3>
+    <p class="author__bio">Data Scientist <br> MS Computational Data Analytics @ Georgia Tech</p>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Atlanta, US</li>
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><a href="https://www.linkedin.com/in/vinaysammangi"><i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a></li>
+      
+      
+      
+      
+      
+      
+        <li><a href="https://github.com/VinaySammangi"><i class="fa fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><a href="https://scholar.google.com/citations?user=VVHnMHAAAAAJ&hl=en"><i class="fa fa-fw fa-chain" aria-hidden="true"></i> Google Scholar</a></li>
+      
+      
+      
+      
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Classification and pattern extraction of incidents: a deep learning-based approach">
+    <meta itemprop="description" content="We proposes a deep learning-based prediction model to predict the incident outcomes using the hidden information underlying the data.">
+    <meta itemprop="datePublished" content="January 06, 2022">
+    
+    
+
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Classification and pattern extraction of incidents: a deep learning-based approach
+</h1>
+          
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-01-06T00:00:00-08:00">January 06, 2022</time></p>
+        
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p><a href="https://link.springer.com/article/10.1007%2Fs00521-021-06780-3">Download PDF here</a>.</p>
+
+<div style="text-align: justify"> 
+
+<b>Abstract:</b> Classifying or predicting occupational incidents using both structured and unstructured (text) data are an unexplored area of research. Unstructured texts, i.e., incident narratives are often unutilized or underutilized. Besides the explicit information, there exist a large amount of hidden information present in a dataset, which cannot be explored by the traditional machine learning (ML) algorithms. There is a scarcity of studies that reveal the use of deep neural networks (DNNs) in the domain of incident prediction, and its parameter optimization for achieving better prediction power. To address these issues, initially, key terms are extracted from the unstructured texts using LDA-based topic modeling. Then, these key terms are added with the predictor categories to form the feature vector, which is further processed for noise reduction and fed to the adaptive moment estimation (ADAM)-based DNN (i.e., ADNN) for classification, as ADAM is superior to GD, SGD, and RMSProp. To evaluate the effectiveness of our proposed method, a comparative study has been conducted using some state-of-the-arts on five benchmark datasets. Moreover, a case study of an integrated steel plant in India has been demonstrated for the validation of the proposed model. Experimental results reveal that ADNN produces superior performance than others in terms of accuracy. Therefore, the present study offers a robust methodological guide that enables us to handle the issues of unstructured data and hidden information for developing a predictive model.<br />
+<br />
+<b>Recommended citation:</b> Sarkar, S., Vinay, S., Djeddi, C. et al. Classification and pattern extraction of incidents: a deep learning-based approach. Neural Comput &amp; Applic (2022). https://doi.org/10.1007/s00521-021-06780-3
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/categories/#articles" class="page__taxonomy-item" rel="tag">articles</a>
+    
+    </span>
+  </p>
+
+
+      </footer>
+
+      
+
+<section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2022-01-06-deep-learning-paper/" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2022-01-06-deep-learning-paper/" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <!-- <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2022-01-06-deep-learning-paper/" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/articles/2022-01-06-deep-learning-paper/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+      
+
+
+  <nav class="pagination">
+    
+      <a href="http://localhost:4000/articles/2021-02-22-arm-application-medprai2020/" class="pagination--pager" title="Text Mining-Based Association Rule Mining for Incident Analysis: A Case Study of a Steel Plant in India
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+
+    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79273-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+

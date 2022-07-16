@@ -1,0 +1,1819 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta charset="utf-8">
+
+
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Content-based Movie Recommendation System - Home</title>
+
+
+
+
+
+
+
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Home">
+<meta property="og:title" content="Content-based Movie Recommendation System">
+
+
+  <link rel="canonical" href="http://localhost:4000/portfolio/Recommendation Engine/">
+  <meta property="og:url" content="http://localhost:4000/portfolio/Recommendation Engine/">
+
+
+
+  <meta property="og:description" content="Using TF-IDF to recommend netflix movies">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2021-12-01T00:00:00-08:00">
+
+
+
+
+
+
+  <meta name="google-site-verification" content="3hdu0GcCfjZ6WbPpApjcdcEGjsCPDcDn1QLtBm-DRBg" />
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Home Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+    
+
+<!-- start custom head snippets -->
+
+<meta name="theme-color" content="#ffffff">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon/site.webmanifest">
+<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+<meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<script type="application/ld+json"> 
+{ 
+"@context": "http://schema.org",
+"@type": "Person",
+"name": "R. Stuart Geiger",
+"email": "mailto:stuart@stuartgeiger.com",
+"image": "http://stuartgeiger.com/images/oban3.jpg",
+"jobTitle": "Ethnographer",
+"name": "R. Stuart Geiger",
+"affiliation": "University of California, Berkeley",
+"alumniOf": "University of California, Berkeley",
+"birthPlace": "Nacogdoches County, TX",
+"gender": "male",
+"honorificSuffix": "PhD",
+"nationality": "United States",
+"url": "http://www.stuartgeiger.com",
+"sameAs" : [
+"http://twitter.com/staeiou",
+"http://github.com/staeiou",
+"https://orcid.org/0000-0001-7215-0532"] 
+} </script>
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="http://localhost:4000/">Home</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/portfolio/">Portfolio</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/year-archive/">Blogs</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/articles/">Publications</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="http://localhost:4000/resume/">CV</a></li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+    <script type="application/ld+json">
+    {
+	"@context": "http://schema.org/",
+	"@type": "CreativeWork",
+	"author": "R. Stuart Geiger",
+        "name": "Content-based Movie Recommendation System",
+	"datePublished": "2021-12-01 00:00:00 -0800",
+	"description": "Using TF-IDF to recommend netflix movies"
+    }
+    </script>
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <div class="sidebar sticky">
+  
+
+
+
+<div>
+
+  <div class="author__avatar">
+    
+    	<img src="http://localhost:4000/assets//images/vinay_pic.png" class="author__avatar" alt="Vinay Sammangi">
+    
+  </div>
+
+  <div class="author__content">
+    <h3 class="author__name">Vinay Sammangi</h3>
+    <p class="author__bio">Data Scientist <br> MS Computational Data Analytics @ Georgia Tech</p>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> Atlanta, US</li>
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><a href="https://www.linkedin.com/in/vinaysammangi"><i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a></li>
+      
+      
+      
+      
+      
+      
+        <li><a href="https://github.com/VinaySammangi"><i class="fa fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <li><a href="https://scholar.google.com/citations?user=VVHnMHAAAAAJ&hl=en"><i class="fa fa-fw fa-chain" aria-hidden="true"></i> Google Scholar</a></li>
+      
+      
+      
+      
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Content-based Movie Recommendation System">
+    <meta itemprop="description" content="Using TF-IDF to recommend netflix movies">
+    <meta itemprop="datePublished" content="December 01, 2021">
+    
+    
+
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Content-based Movie Recommendation System
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  20 minute read
+	
+</p>
+          
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-12-01T00:00:00-08:00">December 01, 2021</time></p>
+        
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <h1 id="1-netflix-movies-recommendation-engine">1. Netflix Movies: Recommendation Engine</h1>
+<h2 id="11-setting-the-context">1.1 Setting the Context</h2>
+
+<div style="text-align: justify"> 
+Netflix is one of the most popular media and video streaming platforms. They have over 8000 movies or tv shows available on their platform. As of Oct-2021, they have over 215M subscribers globally. Once you start logging into Netflix regularly, you will realize that Netflix is usually spot on about what you'd like to see. This is done with the help of something known as a recommender system. A recommender system is capable of predicting a person's future preference given a fixed amount of limited data. One primary reason Netflix uses a recommender system is that a lot of content is present on its platform, which can be entirely irrelevant to people based on their language or genres of interest.
+</div>
+
+<p>In this blog, we will build a straightforward content-based recommendation system on Netflix data. But before getting to that point, we need to preprocess the data and understand the variables. The workflow is 
+as follows:</p>
+<ul>
+  <li>A 3-step missing value imputation process</li>
+  <li>Building a Content-based Recommender System
+<strong>Maximum runtime of the notebook - 5-6 mins</strong></li>
+</ul>
+
+<h2 id="12-setup">1.2 Setup</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Data handling
+</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="nn">time</span><span class="p">,</span> <span class="n">math</span>
+
+<span class="c1"># Parallel Tasking
+</span><span class="kn">from</span> <span class="nn">joblib</span> <span class="kn">import</span> <span class="n">Parallel</span><span class="p">,</span> <span class="n">delayed</span>
+
+<span class="c1"># Web Crawling
+</span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># For the recommender system
+</span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MultiLabelBinarizer</span> 
+</code></pre></div></div>
+
+<h2 id="13-dataset--kaggle">1.3 Dataset : Kaggle</h2>
+
+<p>The tabular dataset that we will use in this notebook consists of listings of all the movies and tv shows available on Netflix, along with details such as - cast, directors, ratings, release year, duration, etc. The data is downloaded from <a href="https://www.kaggle.com/shivamb/netflix-shows/">Kaggle</a>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">netflix_data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"Data/netflix_titles.csv"</span><span class="p">)</span>
+<span class="n">netflix_data</span><span class="p">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>show_id</th>
+      <th>type</th>
+      <th>title</th>
+      <th>director</th>
+      <th>cast</th>
+      <th>country</th>
+      <th>date_added</th>
+      <th>release_year</th>
+      <th>rating</th>
+      <th>duration</th>
+      <th>listed_in</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>s1</td>
+      <td>Movie</td>
+      <td>Dick Johnson Is Dead</td>
+      <td>Kirsten Johnson</td>
+      <td>NaN</td>
+      <td>United States</td>
+      <td>September 25, 2021</td>
+      <td>2020</td>
+      <td>PG-13</td>
+      <td>90 min</td>
+      <td>Documentaries</td>
+      <td>As her father nears the end of his life, filmm...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>s2</td>
+      <td>TV Show</td>
+      <td>Blood &amp; Water</td>
+      <td>NaN</td>
+      <td>Ama Qamata, Khosi Ngema, Gail Mabalane, Thaban...</td>
+      <td>South Africa</td>
+      <td>September 24, 2021</td>
+      <td>2021</td>
+      <td>TV-MA</td>
+      <td>2 Seasons</td>
+      <td>International TV Shows, TV Dramas, TV Mysteries</td>
+      <td>After crossing paths at a party, a Cape Town t...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Having a glance at the first two rows of the dataset tells us there are some missing values in the data. But we will deal with it later. First, we will understand what these variables represent.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Variable</th>
+      <th style="text-align: center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">show_id</td>
+      <td style="text-align: center">Unique ID for every Movie / Tv Show</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">type</td>
+      <td style="text-align: center">Identifier - A Movie or TV Show</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">title</td>
+      <td style="text-align: center">Title of the Movie / Tv Show</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">director</td>
+      <td style="text-align: center">Director of the Movie</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">cast</td>
+      <td style="text-align: center">Actors involved in the movie / show</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">country</td>
+      <td style="text-align: center">Country where the movie / show was produced</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">date_added</td>
+      <td style="text-align: center">Date it was added on Netflix</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">release_year</td>
+      <td style="text-align: center">Actual Release year of the move / show</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">rating</td>
+      <td style="text-align: center">TV Rating of the movie / show</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">duration</td>
+      <td style="text-align: center">Total Duration - in minutes or number of seasons</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">listed_in</td>
+      <td style="text-align: center">Genere</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">description</td>
+      <td style="text-align: center">The summary description</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="14-data-exploration">1.4 Data Exploration</h2>
+
+<h3 id="141-filter-only-movies-data-and-remove-duplicate-rows">1.4.1 Filter only movies data and remove duplicate rows</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">netflix_data</span><span class="p">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s">'all'</span><span class="p">).</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>show_id</th>
+      <th>type</th>
+      <th>title</th>
+      <th>director</th>
+      <th>cast</th>
+      <th>country</th>
+      <th>date_added</th>
+      <th>release_year</th>
+      <th>rating</th>
+      <th>duration</th>
+      <th>listed_in</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>8807</td>
+      <td>8807</td>
+      <td>8807</td>
+      <td>6173</td>
+      <td>7982</td>
+      <td>7976</td>
+      <td>8797</td>
+      <td>8807.0</td>
+      <td>8803</td>
+      <td>8804</td>
+      <td>8807</td>
+      <td>8807</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>8807</td>
+      <td>2</td>
+      <td>8807</td>
+      <td>4528</td>
+      <td>7692</td>
+      <td>748</td>
+      <td>1767</td>
+      <td>NaN</td>
+      <td>17</td>
+      <td>220</td>
+      <td>514</td>
+      <td>8775</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>s1</td>
+      <td>Movie</td>
+      <td>Dick Johnson Is Dead</td>
+      <td>Rajiv Chilaka</td>
+      <td>David Attenborough</td>
+      <td>United States</td>
+      <td>January 1, 2020</td>
+      <td>NaN</td>
+      <td>TV-MA</td>
+      <td>1 Season</td>
+      <td>Dramas, International Movies</td>
+      <td>Paranormal activity at a lush, abandoned prope...</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>1</td>
+      <td>6131</td>
+      <td>1</td>
+      <td>19</td>
+      <td>19</td>
+      <td>2818</td>
+      <td>109</td>
+      <td>NaN</td>
+      <td>3207</td>
+      <td>1793</td>
+      <td>362</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>There are 8807 rows in the dataset. We will focus only on movies data (not TV shows) and build a recommendation system on it.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">netflix_data</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'type'</span><span class="p">).</span><span class="n">count</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>show_id</th>
+      <th>title</th>
+      <th>director</th>
+      <th>cast</th>
+      <th>country</th>
+      <th>date_added</th>
+      <th>release_year</th>
+      <th>rating</th>
+      <th>duration</th>
+      <th>listed_in</th>
+      <th>description</th>
+    </tr>
+    <tr>
+      <th>type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Movie</th>
+      <td>6131</td>
+      <td>6131</td>
+      <td>5943</td>
+      <td>5656</td>
+      <td>5691</td>
+      <td>6131</td>
+      <td>6131</td>
+      <td>6129</td>
+      <td>6128</td>
+      <td>6131</td>
+      <td>6131</td>
+    </tr>
+    <tr>
+      <th>TV Show</th>
+      <td>2676</td>
+      <td>2676</td>
+      <td>230</td>
+      <td>2326</td>
+      <td>2285</td>
+      <td>2666</td>
+      <td>2676</td>
+      <td>2674</td>
+      <td>2676</td>
+      <td>2676</td>
+      <td>2676</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We can observe 6131 movies and 2676 tv shows on Netflix. So, we will only filter the movies data from the original dataset.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movies_data</span> <span class="o">=</span> <span class="n">netflix_data</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">netflix_data</span><span class="p">[</span><span class="s">"type"</span><span class="p">]</span><span class="o">==</span><span class="s">"Movie"</span><span class="p">,].</span><span class="n">copy</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movies_data</span><span class="p">[</span><span class="s">"title"</span><span class="p">]</span> <span class="o">=</span> <span class="n">movies_data</span><span class="p">[</span><span class="s">'title'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">strip</span><span class="p">().</span><span class="nb">str</span><span class="p">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">movies_data</span><span class="p">[</span><span class="s">'title'</span><span class="p">].</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">movies_data</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">movies_data</span><span class="p">[</span><span class="s">"title"</span><span class="p">].</span><span class="n">isin</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">temp</span><span class="p">.</span><span class="n">index</span><span class="p">[</span><span class="n">temp</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">])),]</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>show_id</th>
+      <th>type</th>
+      <th>title</th>
+      <th>director</th>
+      <th>cast</th>
+      <th>country</th>
+      <th>date_added</th>
+      <th>release_year</th>
+      <th>rating</th>
+      <th>duration</th>
+      <th>listed_in</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>159</th>
+      <td>s160</td>
+      <td>Movie</td>
+      <td>love in a puff</td>
+      <td>Pang Ho-cheung</td>
+      <td>Miriam Chin Wah Yeung, Shawn Yue, Singh Hartih...</td>
+      <td>Hong Kong</td>
+      <td>September 1, 2021</td>
+      <td>2010</td>
+      <td>TV-MA</td>
+      <td>103 min</td>
+      <td>Comedies, Dramas, International Movies</td>
+      <td>When the Hong Kong government enacts a ban on ...</td>
+    </tr>
+    <tr>
+      <th>303</th>
+      <td>s304</td>
+      <td>Movie</td>
+      <td>esperando la carroza</td>
+      <td>Alejandro Doria</td>
+      <td>Luis Brandoni, China Zorrilla, Antonio Gasalla...</td>
+      <td>Argentina</td>
+      <td>August 5, 2021</td>
+      <td>1985</td>
+      <td>TV-MA</td>
+      <td>95 min</td>
+      <td>Comedies, Cult Movies, International Movies</td>
+      <td>Cora has three sons and a daughter and she´s a...</td>
+    </tr>
+    <tr>
+      <th>3371</th>
+      <td>s3372</td>
+      <td>Movie</td>
+      <td>consequences</td>
+      <td>Ozan Açıktan</td>
+      <td>Nehir Erdoğan, Tardu Flordun, İlker Kaleli, Se...</td>
+      <td>Turkey</td>
+      <td>October 25, 2019</td>
+      <td>2014</td>
+      <td>TV-MA</td>
+      <td>106 min</td>
+      <td>Dramas, International Movies, Thrillers</td>
+      <td>Secrets bubble to the surface after a sensual ...</td>
+    </tr>
+    <tr>
+      <th>6529</th>
+      <td>s6530</td>
+      <td>Movie</td>
+      <td>consequences</td>
+      <td>Ozan Açıktan</td>
+      <td>Nehir Erdoğan, Tardu Flordun, İlker Kaleli, Se...</td>
+      <td>Turkey</td>
+      <td>October 25, 2019</td>
+      <td>2014</td>
+      <td>TV-MA</td>
+      <td>106 min</td>
+      <td>Dramas, International Movies, Thrillers</td>
+      <td>Secrets bubble to the surface after a sensual ...</td>
+    </tr>
+    <tr>
+      <th>6705</th>
+      <td>s6706</td>
+      <td>Movie</td>
+      <td>esperando la carroza</td>
+      <td>Alejandro Doria</td>
+      <td>Luis Brandoni, China Zorrilla, Antonio Gasalla...</td>
+      <td>Argentina</td>
+      <td>July 15, 2018</td>
+      <td>1985</td>
+      <td>NR</td>
+      <td>95 min</td>
+      <td>Comedies, Cult Movies, International Movies</td>
+      <td>Cora has three sons and a daughter and she´s a...</td>
+    </tr>
+    <tr>
+      <th>7345</th>
+      <td>s7346</td>
+      <td>Movie</td>
+      <td>love in a puff</td>
+      <td>Pang Ho-cheung</td>
+      <td>Miriam Chin Wah Yeung, Shawn Yue, Singh Hartih...</td>
+      <td>Hong Kong</td>
+      <td>August 1, 2018</td>
+      <td>2010</td>
+      <td>TV-MA</td>
+      <td>103 min</td>
+      <td>Comedies, Dramas, International Movies</td>
+      <td>When the Hong Kong government enacts a ban on ...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>It looks like these are surely duplicate rows. So, we can remove either of the rows for each movie.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movies_data</span> <span class="o">=</span> <span class="n">movies_data</span><span class="p">.</span><span class="n">drop</span><span class="p">([</span><span class="mi">6529</span><span class="p">,</span><span class="mi">6705</span><span class="p">,</span><span class="mi">7345</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="142-missing-value-handling-imputation">1.4.2 Missing Value Handling/ Imputation</h3>
+<p>Instead of directly removing rows with missing values, we try to impute as much data as possible with high accuracy.
+This process involves three steps:</p>
+<ul>
+  <li>Stage 1: Remove rows for columns with very, very few missing values</li>
+  <li>Stage 2: Web crawling based imputation to achieve high accuracy</li>
+  <li>Stage 3: Replace the remaining NaN values with an empty string to preserve information in other columns</li>
+</ul>
+
+<h4 id="1421-handling-missing-values---stage-1-drop-rows">1.4.2.1 Handling Missing Values - Stage 1 (Drop Rows)</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Rows with missing values in the data: "</span><span class="o">+</span>
+      <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">movies_data</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">movies_data</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="s">"%"</span><span class="p">)</span>
+<span class="n">movies_data</span><span class="p">.</span><span class="n">isna</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rows with missing values in the data: 15.44%
+
+
+
+
+
+show_id           0
+type              0
+title             0
+director        188
+cast            475
+country         440
+date_added        0
+release_year      0
+rating            2
+duration          3
+listed_in         0
+description       0
+dtype: int64
+</code></pre></div></div>
+
+<p>We can see several missing values in the <code class="language-plaintext highlighter-rouge">director</code>, <code class="language-plaintext highlighter-rouge">cast</code>, <code class="language-plaintext highlighter-rouge">country</code> columns and a very few missing values in the <code class="language-plaintext highlighter-rouge">rating</code> and <code class="language-plaintext highlighter-rouge">duration</code> columns. Let’s remove the rows with missing values in the <code class="language-plaintext highlighter-rouge">rating</code> and <code class="language-plaintext highlighter-rouge">duration</code> columns.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movies_data</span><span class="p">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s">"rating"</span><span class="p">,</span><span class="s">"duration"</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s">'any'</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Rows with missing values in the data: "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">movies_data</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">movies_data</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="s">"%"</span><span class="p">)</span>
+<span class="n">movies_data</span><span class="p">.</span><span class="n">isna</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rows with missing values in the data: 15.37%
+
+
+
+
+
+show_id           0
+type              0
+title             0
+director        187
+cast            475
+country         439
+date_added        0
+release_year      0
+rating            0
+duration          0
+listed_in         0
+description       0
+dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nan_rows_df</span> <span class="o">=</span> <span class="n">movies_data</span><span class="p">[</span><span class="n">movies_data</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">nan_rows_df</span><span class="p">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>show_id</th>
+      <th>type</th>
+      <th>title</th>
+      <th>director</th>
+      <th>cast</th>
+      <th>country</th>
+      <th>date_added</th>
+      <th>release_year</th>
+      <th>rating</th>
+      <th>duration</th>
+      <th>listed_in</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>s1</td>
+      <td>Movie</td>
+      <td>dick johnson is dead</td>
+      <td>Kirsten Johnson</td>
+      <td>NaN</td>
+      <td>United States</td>
+      <td>September 25, 2021</td>
+      <td>2020</td>
+      <td>PG-13</td>
+      <td>90 min</td>
+      <td>Documentaries</td>
+      <td>As her father nears the end of his life, filmm...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>s7</td>
+      <td>Movie</td>
+      <td>my little pony: a new generation</td>
+      <td>Robert Cullen, José Luis Ucha</td>
+      <td>Vanessa Hudgens, Kimiko Glenn, James Marsden, ...</td>
+      <td>NaN</td>
+      <td>September 24, 2021</td>
+      <td>2021</td>
+      <td>PG</td>
+      <td>91 min</td>
+      <td>Children &amp; Family Movies</td>
+      <td>Equestria's divided. But a bright-eyed hero be...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>There are still more than 15% rows with missing values. So instead of removing those rows, we will try to impute the data with high accuracy.</p>
+
+<h4 id="1422-handling-missing-values---stage-2-web-crawling">1.4.2.2 Handling Missing Values - Stage 2 (Web Crawling)</h4>
+
+<p>The concept behind this is simple. For example, let’s look at the first row in the above table where the movie title is “Dick Johnson Is Dead” and the cast has NaN value. First of all, why is this value missing? There could be two potential reasons.</p>
+<ul>
+  <li>Netflix might not log this information on their platform. Hence the value was missing</li>
+  <li>This data file is being maintained on Kaggle and constantly updated by only a single person. So, there might be some manual errors involved while copying the data into a CSV file.</li>
+</ul>
+
+<p>However, we can’t attribute each row with missing value to a specific reason. In either case, we will look up the movie on <a href="https://www.imdb.com/">IMDb</a> and get the director, cast, and country of origin data.</p>
+
+<p>You can also look at this sample <a href="https://www.imdb.com/title/tt11394180/?ref_=fn_al_tt_1">URL</a> and see how we can extract the director, cast, and country of origin variables from it.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Functions to extract the director, cast, country of origin data from a page source
+</span>
+<span class="k">def</span> <span class="nf">get_director</span><span class="p">(</span><span class="n">soup</span><span class="p">):</span>
+    <span class="s">"""
+    Extract the director information from the HTML source data
+    Args:
+        soup: object (page source) obtained from scraping the website using BeautifulSoup() function
+    Returns:
+        director: returns a string containing directors of a movie separated by a comma
+    """</span> 
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">director</span> <span class="o">=</span> <span class="s">""</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">"section"</span><span class="p">,{</span><span class="s">"data-testid"</span><span class="p">:</span><span class="s">"title-cast"</span><span class="p">}).</span><span class="n">find_all</span><span class="p">(</span><span class="s">"li"</span><span class="p">,{</span><span class="s">"class"</span><span class="p">,</span><span class="s">"ipc-metadata-list__item"</span><span class="p">})</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span><span class="o">==</span><span class="mi">4</span><span class="p">:</span> <span class="c1">#if the section on the page in found
+</span>            <span class="n">director_soups</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">find_all</span><span class="p">(</span><span class="s">"a"</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">director_soup</span> <span class="ow">in</span> <span class="n">director_soups</span><span class="p">:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">director_soup</span><span class="p">.</span><span class="n">get_text</span><span class="p">().</span><span class="n">strip</span><span class="p">()</span>
+                <span class="n">director</span> <span class="o">=</span> <span class="n">director</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">", "</span>
+            <span class="n">director</span> <span class="o">=</span> <span class="n">director</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">director</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">director</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">director</span>
+
+<span class="k">def</span> <span class="nf">get_cast</span><span class="p">(</span><span class="n">soup</span><span class="p">):</span>
+    <span class="s">"""
+    Extract the cast information from the HTML source data
+    Args:
+        soup: object (page source) obtained from scraping the website using BeautifulSoup() function
+    Returns:
+        cast: returns a string containing all the cast members of a movie separated by a comma
+    """</span> 
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cast</span> <span class="o">=</span> <span class="s">""</span>
+        <span class="n">cast_soups</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">"section"</span><span class="p">,{</span><span class="s">"data-testid"</span><span class="p">:</span><span class="s">"title-cast"</span><span class="p">}).</span><span class="n">find_all</span><span class="p">(</span><span class="s">"a"</span><span class="p">,{</span><span class="s">"data-testid"</span><span class="p">:</span><span class="s">"title-cast-item__actor"</span><span class="p">})</span>
+        <span class="k">for</span> <span class="n">cast_soup</span> <span class="ow">in</span> <span class="n">cast_soups</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">cast_soup</span><span class="p">.</span><span class="n">get_text</span><span class="p">().</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">cast</span> <span class="o">=</span> <span class="n">cast</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">", "</span>
+        <span class="n">cast</span> <span class="o">=</span> <span class="n">cast</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">cast</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">cast</span>
+    
+<span class="k">def</span> <span class="nf">get_country</span><span class="p">(</span><span class="n">soup</span><span class="p">):</span>
+    <span class="s">"""
+    Extract the country information from the HTML source data
+    Args:
+        soup: object (page source) obtained from scraping the website using BeautifulSoup() function
+    Returns:
+        country: returns a string containing all the countries of origin of a movie separated by a comma
+    """</span> 
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">country</span> <span class="o">=</span> <span class="s">""</span>
+        <span class="n">countries_soups</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">"div"</span><span class="p">,{</span><span class="s">"data-testid"</span><span class="p">:</span><span class="s">"title-details-section"</span><span class="p">}).</span><span class="n">find</span><span class="p">(</span><span class="s">"li"</span><span class="p">,{</span><span class="s">"data-testid"</span><span class="p">:</span><span class="s">"title-details-origin"</span><span class="p">}).</span><span class="n">find_all</span><span class="p">(</span><span class="s">"a"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">countries_soup</span> <span class="ow">in</span> <span class="n">countries_soups</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">countries_soup</span><span class="p">.</span><span class="n">get_text</span><span class="p">().</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">country</span> <span class="o">=</span> <span class="n">country</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">", "</span>
+        <span class="n">country</span> <span class="o">=</span> <span class="n">country</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">country</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">country</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%%</span><span class="n">time</span>
+
+<span class="k">def</span> <span class="nf">imdb_requests</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="s">"""
+    Main Function that extracts the director, cast, and countries of origin information for each row with NaN value
+    Args:
+        row: dataframe row containing atleast one NaN value
+    Returns:
+        main_dict: returns a dictionary containing title, show_id, director, cast, country as keys and their
+        corresponding values as dictionary values
+    """</span> 
+    <span class="n">main_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">main_dict</span><span class="p">[</span><span class="s">"title"</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s">"title"</span><span class="p">]</span>
+    <span class="n">main_dict</span><span class="p">[</span><span class="s">"show_id"</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s">"show_id"</span><span class="p">]</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://www.imdb.com/find?ref_=nv_sr_fn&amp;q="</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">main_dict</span><span class="p">[</span><span class="s">"title"</span><span class="p">]))</span>
+        <span class="n">source</span><span class="p">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">source</span><span class="p">.</span><span class="n">text</span><span class="p">,</span><span class="s">'html.parser'</span><span class="p">)</span>
+
+        <span class="c1">#take the first URL on the results page and extract information from it
+</span>        <span class="n">title</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">"td"</span><span class="p">,{</span><span class="s">"class"</span><span class="p">:</span><span class="s">"result_text"</span><span class="p">}).</span><span class="n">find</span><span class="p">(</span><span class="s">'a'</span><span class="p">).</span><span class="n">get</span><span class="p">(</span><span class="s">"href"</span><span class="p">)</span>
+        
+        <span class="n">new_url</span> <span class="o">=</span> <span class="s">"https://www.imdb.com"</span><span class="o">+</span><span class="n">title</span>
+        <span class="n">source</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">new_url</span><span class="p">)</span>
+        <span class="n">source</span><span class="p">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">source</span><span class="p">.</span><span class="n">text</span><span class="p">,</span><span class="s">'html.parser'</span><span class="p">)</span>
+        <span class="n">main_dict</span><span class="p">[</span><span class="s">"director"</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_director</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+        <span class="n">main_dict</span><span class="p">[</span><span class="s">"cast"</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_cast</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+        <span class="n">main_dict</span><span class="p">[</span><span class="s">"country"</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_country</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>        
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+    
+    <span class="k">return</span> <span class="n">main_dict</span>
+
+<span class="s">"""
+The below four rows calls several URL requests using a parallel function, convert an array of dictionaries 
+to a data frame, and replace empty string with NaN values (to impute them later).
+This code takes close to 5 minutes to run. I ran this already and generated the intermediate file, 
+which I will use in the subsequent sections.
+"""</span>
+<span class="c1"># nan_rows_search_results = Parallel(n_jobs=-1)(delayed(imdb_requests)(row) for index, row in nan_rows_df.iterrows())
+# nan_rows_search_results_df = pd.DataFrame(nan_rows_search_results)
+# nan_rows_search_results_df = nan_rows_search_results_df.replace('',np.nan,regex=True)
+# nan_rows_search_results_df.to_csv("IMDB_intermediate_data.csv",index=False)
+</span><span class="n">nan_rows_search_results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"IMDB_intermediate_data.csv"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CPU times: user 4.45 ms, sys: 1.67 ms, total: 6.12 ms
+Wall time: 5.25 ms
+</code></pre></div></div>
+
+<p><strong>Single Core vs Multi Core Computations:</strong></p>
+
+<p><img src="/assets/images/netflix_recommender/parallel.png" width="1600" height="800" /></p>
+
+<p>We observe that using a parallel function helps us reduce the run time to 15%.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movies_data</span><span class="p">.</span><span class="n">cast</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">movies_data</span><span class="p">.</span><span class="n">cast</span><span class="p">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">movies_data</span><span class="p">.</span><span class="n">show_id</span><span class="p">.</span><span class="nb">map</span><span class="p">(</span><span class="n">nan_rows_search_results_df</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'show_id'</span><span class="p">).</span><span class="n">cast</span><span class="p">),</span><span class="n">movies_data</span><span class="p">.</span><span class="n">cast</span><span class="p">)</span>
+<span class="n">movies_data</span><span class="p">.</span><span class="n">country</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">movies_data</span><span class="p">.</span><span class="n">country</span><span class="p">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">movies_data</span><span class="p">.</span><span class="n">show_id</span><span class="p">.</span><span class="nb">map</span><span class="p">(</span><span class="n">nan_rows_search_results_df</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'show_id'</span><span class="p">).</span><span class="n">country</span><span class="p">),</span><span class="n">movies_data</span><span class="p">.</span><span class="n">country</span><span class="p">)</span>
+<span class="n">movies_data</span><span class="p">.</span><span class="n">director</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">where</span><span class="p">(</span><span class="n">movies_data</span><span class="p">.</span><span class="n">director</span><span class="p">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">movies_data</span><span class="p">.</span><span class="n">show_id</span><span class="p">.</span><span class="nb">map</span><span class="p">(</span><span class="n">nan_rows_search_results_df</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'show_id'</span><span class="p">).</span><span class="n">director</span><span class="p">),</span><span class="n">movies_data</span><span class="p">.</span><span class="n">director</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Rows with missing values in the data: "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">movies_data</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">movies_data</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="s">"%"</span><span class="p">)</span>
+<span class="n">movies_data</span><span class="p">.</span><span class="n">isna</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rows with missing values in the data: 5.42%
+
+
+
+
+
+show_id           0
+type              0
+title             0
+director        109
+cast            104
+country         183
+date_added        0
+release_year      0
+rating            0
+duration          0
+listed_in         0
+description       0
+dtype: int64
+</code></pre></div></div>
+
+<p>We now only have about 5.4% of the missing rows in the data. Unfortunately, we could not find the rest of them from the IMDB data. So, we replace them with an empty string.</p>
+
+<h4 id="1423-handling-missing-values---stage-3-replace-with-empty-string">1.4.2.3 Handling Missing Values - Stage 3 (Replace with Empty String)</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movies_data</span> <span class="o">=</span> <span class="n">movies_data</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">,</span><span class="s">''</span><span class="p">,</span><span class="n">regex</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">movies_data</span><span class="p">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Rows with missing values in the data: "</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">movies_data</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">movies_data</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="s">"%"</span><span class="p">)</span>
+<span class="n">movies_data</span><span class="p">.</span><span class="n">isna</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rows with missing values in the data: 0.0%
+
+
+
+
+
+show_id         0
+type            0
+title           0
+director        0
+cast            0
+country         0
+date_added      0
+release_year    0
+rating          0
+duration        0
+listed_in       0
+description     0
+dtype: int64
+</code></pre></div></div>
+
+<h3 id="143-parsing-the-date_added-duration-columns">1.4.3 Parsing the <code class="language-plaintext highlighter-rouge">date_added</code>, <code class="language-plaintext highlighter-rouge">duration</code> columns</h3>
+
+<p>We will extract the year, month, and day of the week data from the <code class="language-plaintext highlighter-rouge">date_added</code> column and analyze them separately to generate more insights later. Also, we parse the <code class="language-plaintext highlighter-rouge">duration</code> column into a numeric column.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Year added column
+</span><span class="n">movies_data</span><span class="p">[</span><span class="s">'year_added'</span><span class="p">]</span> <span class="o">=</span> <span class="n">movies_data</span><span class="p">[</span><span class="s">'date_added'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">" "</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">movies_data</span><span class="p">[</span><span class="s">'year_added'</span><span class="p">]</span> <span class="o">=</span> <span class="n">movies_data</span><span class="p">[</span><span class="s">"year_added"</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">"int"</span><span class="p">)</span>
+<span class="c1"># Month added column
+</span><span class="n">movies_data</span><span class="p">[</span><span class="s">'month_added'</span><span class="p">]</span> <span class="o">=</span> <span class="n">movies_data</span><span class="p">[</span><span class="s">'date_added'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">" "</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">movies_data</span><span class="p">[</span><span class="s">'date_added'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">movies_data</span><span class="p">[</span><span class="s">'date_added'</span><span class="p">])</span>
+<span class="n">movies_data</span><span class="p">[</span><span class="s">'day_of_week'</span><span class="p">]</span> <span class="o">=</span> <span class="n">movies_data</span><span class="p">[</span><span class="s">'date_added'</span><span class="p">].</span><span class="n">dt</span><span class="p">.</span><span class="n">day_name</span><span class="p">()</span>
+<span class="n">movies_data</span><span class="p">[[</span><span class="s">'month_added'</span><span class="p">,</span><span class="s">'year_added'</span><span class="p">,</span><span class="s">'day_of_week'</span><span class="p">]].</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>month_added</th>
+      <th>year_added</th>
+      <th>day_of_week</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>September</td>
+      <td>2021</td>
+      <td>Saturday</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>September</td>
+      <td>2021</td>
+      <td>Friday</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>September</td>
+      <td>2021</td>
+      <td>Friday</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>September</td>
+      <td>2021</td>
+      <td>Friday</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>September</td>
+      <td>2021</td>
+      <td>Thursday</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movies_data</span><span class="p">[</span><span class="s">'duration'</span><span class="p">]</span><span class="o">=</span><span class="n">movies_data</span><span class="p">[</span><span class="s">'duration'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">' min'</span><span class="p">,</span><span class="s">''</span><span class="p">)</span>
+<span class="n">movies_data</span><span class="p">[</span><span class="s">'duration'</span><span class="p">]</span><span class="o">=</span><span class="n">movies_data</span><span class="p">[</span><span class="s">'duration'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">).</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="15-content-based-recommendation-engine-on-multiple-metrics">1.5 Content-based recommendation engine on multiple metrics</h2>
+
+<p>Now that we have a fair understanding of the variables, we will build the recommendation engine using a few of them. There are <a href="https://en.wikipedia.org/wiki/Recommender_system">two</a> main types of recommendation engines: content-based filtering and collaborative filtering. We will try to build the former one in this notebook.</p>
+
+<p>Content-based filtering works on the principle that you will also like another item if you like a particular item. For example, to provide movie recommendations, algorithms use several movie attributes like <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">genre</code>, <code class="language-plaintext highlighter-rouge">director</code>, <code class="language-plaintext highlighter-rouge">cast</code> to compare movies using cosine or euclidean distances. One of the major downsides of this approach is that this system limits recommending movies similar to what the person has already watched. However, we will not address this in this notebook.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s">'title'</span><span class="p">,</span><span class="s">'director'</span><span class="p">,</span><span class="s">'cast'</span><span class="p">,</span><span class="s">'listed_in'</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">clean_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">features</span><span class="p">):</span>
+    <span class="n">df_subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">features</span><span class="p">].</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">df_subset</span><span class="p">[</span><span class="s">'main_column'</span><span class="p">]</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">features</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">feature</span><span class="o">!=</span><span class="s">"description"</span><span class="p">:</span>
+            <span class="n">df_subset</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_subset</span><span class="p">[</span><span class="n">feature</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">.</span><span class="n">lower</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">" "</span><span class="p">,</span> <span class="s">""</span><span class="p">)))</span>
+        <span class="n">df_subset</span><span class="p">[</span><span class="s">"main_column"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_subset</span><span class="p">[</span><span class="s">"main_column"</span><span class="p">]</span> <span class="o">+</span> <span class="s">' '</span> <span class="o">+</span> <span class="n">df_subset</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">df_subset</span>
+</code></pre></div></div>
+
+<p>We need to remove the spaces from the data before combining the features to a new column. This is required because, for example, there are 84 directors with Michael as part of their name, but none of them have a common full name. So it doesn’t make sense to recommend a director’s movies only because they have a part of their name common to another director. The same logic applies to the other columns.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movies_data_subset</span> <span class="o">=</span> <span class="n">clean_data</span><span class="p">(</span><span class="n">movies_data</span><span class="p">,</span><span class="n">features</span><span class="p">)</span>
+<span class="n">movies_data_subset</span><span class="p">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>director</th>
+      <th>cast</th>
+      <th>listed_in</th>
+      <th>main_column</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>dickjohnsonisdead</td>
+      <td>kirstenjohnson</td>
+      <td>michaelhilow,anahoffman,dickjohnson,kirstenjoh...</td>
+      <td>documentaries</td>
+      <td>dickjohnsonisdead kirstenjohnson michaelhilow...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>mylittlepony:anewgeneration</td>
+      <td>robertcullen,joséluisucha</td>
+      <td>vanessahudgens,kimikoglenn,jamesmarsden,sofiac...</td>
+      <td>children&amp;familymovies</td>
+      <td>mylittlepony:anewgeneration robertcullen,josé...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We use the TF-IDF (term frequency–inverse document frequency) matrix to process the new combined column <code class="language-plaintext highlighter-rouge">main_column</code> that was created in the previous step. You can also read about TF-IDF <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">here</a>. We then use cosine-similarity to create a score between each pair of movies.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tfidf</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s">'english'</span><span class="p">)</span>
+<span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">tfidf</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">movies_data_subset</span><span class="p">[</span><span class="s">'main_column'</span><span class="p">])</span>
+<span class="n">cosine_sim</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">tfidf_matrix</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="151-which-movies-are-the-most-similar-to-each-other">1.5.1 Which movies are the most similar to each other?</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movie_titles_df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">movies_data</span><span class="p">[</span><span class="s">'title'</span><span class="p">]).</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">movie_titles_df</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">"row_id"</span><span class="p">,</span><span class="s">"Title"</span><span class="p">]</span>
+
+<span class="n">cosine_sim_df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cosine_sim</span><span class="p">).</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">cosine_sim_df_melted</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">melt</span><span class="p">(</span><span class="n">cosine_sim_df</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s">'index'</span><span class="p">],</span> <span class="n">value_vars</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">cosine_sim_df</span><span class="p">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
+<span class="n">cosine_sim_df_melted</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">"row_id1"</span><span class="p">,</span><span class="s">"row_id2"</span><span class="p">,</span><span class="s">"similarity"</span><span class="p">]</span>
+<span class="n">cosine_sim_df_melted</span> <span class="o">=</span> <span class="n">cosine_sim_df_melted</span><span class="p">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s">"similarity"</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">cosine_sim_df_melted</span> <span class="o">=</span> <span class="n">cosine_sim_df_melted</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cosine_sim_df_melted</span><span class="p">[</span><span class="s">"row_id1"</span><span class="p">]</span><span class="o">&lt;</span><span class="n">cosine_sim_df_melted</span><span class="p">[</span><span class="s">"row_id2"</span><span class="p">],].</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Filter movies with very high similarity</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">thres</span> <span class="o">=</span> <span class="mf">0.9</span>
+<span class="n">filtered_df</span> <span class="o">=</span> <span class="n">cosine_sim_df_melted</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cosine_sim_df_melted</span><span class="p">[</span><span class="s">"similarity"</span><span class="p">]</span><span class="o">&gt;</span><span class="n">thres</span><span class="p">,].</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">filtered_df</span> <span class="o">=</span> <span class="n">filtered_df</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">movie_titles_df</span><span class="p">,</span><span class="n">left_on</span><span class="o">=</span><span class="s">"row_id1"</span><span class="p">,</span><span class="n">right_on</span><span class="o">=</span><span class="s">"row_id"</span><span class="p">)</span>
+<span class="n">filtered_df</span> <span class="o">=</span> <span class="n">filtered_df</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">movie_titles_df</span><span class="p">,</span><span class="n">left_on</span><span class="o">=</span><span class="s">"row_id2"</span><span class="p">,</span><span class="n">right_on</span><span class="o">=</span><span class="s">"row_id"</span><span class="p">)</span>
+<span class="n">filtered_df</span> <span class="o">=</span> <span class="n">filtered_df</span><span class="p">[[</span><span class="s">"Title_x"</span><span class="p">,</span><span class="s">"Title_y"</span><span class="p">,</span><span class="s">"similarity"</span><span class="p">]].</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">filtered_df</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Movie1"</span><span class="p">,</span><span class="s">"Movie2"</span><span class="p">,</span><span class="s">"Similarity"</span><span class="p">]</span>
+<span class="n">filtered_df</span><span class="p">[</span><span class="s">"Similarity"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">filtered_df</span><span class="p">[</span><span class="s">"Similarity"</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">filtered_df</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Movie1</th>
+      <th>Movie2</th>
+      <th>Similarity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>oh! baby (tamil)</td>
+      <td>oh! baby</td>
+      <td>0.96</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>oh! baby (malayalam)</td>
+      <td>oh! baby</td>
+      <td>0.96</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>oh! baby (malayalam)</td>
+      <td>oh! baby (tamil)</td>
+      <td>0.93</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>solo: a star wars story</td>
+      <td>solo: a star wars story (spanish version)</td>
+      <td>0.96</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>rogue warfare: death of a nation</td>
+      <td>rogue warfare</td>
+      <td>0.96</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>rogue warfare: the hunt</td>
+      <td>rogue warfare</td>
+      <td>0.96</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>rogue warfare: death of a nation</td>
+      <td>rogue warfare: the hunt</td>
+      <td>0.92</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>boomika</td>
+      <td>boomika (hindi)</td>
+      <td>0.95</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>boomika</td>
+      <td>boomika (telugu)</td>
+      <td>0.95</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>boomika</td>
+      <td>boomika (malayalam)</td>
+      <td>0.94</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>petta (telugu version)</td>
+      <td>petta</td>
+      <td>0.94</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>bo burnham: what.</td>
+      <td>bo burnham: make happy</td>
+      <td>0.93</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>godzilla the planet eater</td>
+      <td>godzilla city on the edge of battle</td>
+      <td>0.93</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>osuofia in london</td>
+      <td>osuofia in london ii</td>
+      <td>0.92</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>tughlaq durbar</td>
+      <td>tughlaq durbar (telugu)</td>
+      <td>0.92</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>naruto shippuden the movie: blood prison</td>
+      <td>naruto shippuden : blood prison</td>
+      <td>0.92</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>sarvam thaala mayam (telugu version)</td>
+      <td>sarvam thaala mayam (tamil version)</td>
+      <td>0.92</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>chris d'elia: man on fire</td>
+      <td>chris d'elia: incorrigible</td>
+      <td>0.92</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>octonauts &amp; the ring of fire</td>
+      <td>octonauts &amp; the great barrier reef</td>
+      <td>0.91</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>the twilight saga: breaking dawn: part 1</td>
+      <td>the twilight saga: breaking dawn: part 2</td>
+      <td>0.91</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>baahubali 2: the conclusion (hindi version)</td>
+      <td>baahubali 2: the conclusion (tamil version)</td>
+      <td>0.91</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>baahubali 2: the conclusion (malayalam version)</td>
+      <td>baahubali 2: the conclusion (tamil version)</td>
+      <td>0.90</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>baahubali 2: the conclusion (hindi version)</td>
+      <td>baahubali 2: the conclusion (malayalam version)</td>
+      <td>0.90</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>baahubali: the beginning (hindi version)</td>
+      <td>baahubali: the beginning (tamil version)</td>
+      <td>0.91</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>baahubali: the beginning (malayalam version)</td>
+      <td>baahubali: the beginning (tamil version)</td>
+      <td>0.90</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>baahubali: the beginning (hindi version)</td>
+      <td>baahubali: the beginning (malayalam version)</td>
+      <td>0.90</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>the magic school bus rides again the frizz con...</td>
+      <td>the magic school bus rides again kids in space</td>
+      <td>0.91</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>game over (hindi version)</td>
+      <td>game over (tamil version)</td>
+      <td>0.90</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>game over (hindi version)</td>
+      <td>game over (telugu version)</td>
+      <td>0.90</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>game over (tamil version)</td>
+      <td>game over (telugu version)</td>
+      <td>0.90</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>We observe that the same movie with different versions in multiple languages has the highest score based on the results. If we do not want them as part of our recommendations, we can remove the duplicate entries in the preprocessing step. For now, we will keep them as part of our model.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movies_data_subset</span><span class="o">=</span><span class="n">movies_data_subset</span><span class="p">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">Series</span><span class="p">(</span><span class="n">movies_data_subset</span><span class="p">.</span><span class="n">index</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">movies_data_subset</span><span class="p">[</span><span class="s">'title'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="152-lets-get-some-recommendations-for-a-movie">1.5.2 Let’s get some recommendations for a movie</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_recommendations_new</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">cosine_sim</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="s">"""
+    Find the similar movies to a given movie
+    Args:
+        title: movie title to which we find recommendations
+        cosine_sim: cosine similarity matrix for finding similar movies
+        n: number of movies to recommend
+    Returns:
+        results_df: returns a dataframe containing the list of recommended movies with rowids
+        and their similarity score
+    """</span> 
+    <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">' '</span><span class="p">,</span><span class="s">''</span><span class="p">).</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">indices</span><span class="p">[</span><span class="n">title</span><span class="p">]</span>
+
+    <span class="c1">#pairwsie similarity scores of all movies with that movie
+</span>    <span class="n">sim_scores</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">cosine_sim</span><span class="p">[</span><span class="n">idx</span><span class="p">]))</span>
+    <span class="c1">#sort the movies based on cosine similarity scores
+</span>    <span class="n">sim_scores</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">sim_scores</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="c1"># Get the scores of the top n most similar movies
+</span>    <span class="n">sim_scores</span> <span class="o">=</span> <span class="n">sim_scores</span><span class="p">[</span><span class="mi">1</span><span class="p">:(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="c1"># Get their movie indices
+</span>    <span class="n">movie_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sim_scores</span><span class="p">]</span>
+
+    <span class="c1"># Return the top 10 most similar movies
+</span>    <span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">movies_data</span><span class="p">[</span><span class="s">'title'</span><span class="p">].</span><span class="n">iloc</span><span class="p">[</span><span class="n">movie_indices</span><span class="p">])</span>
+    <span class="n">results_df</span><span class="p">[</span><span class="s">"score"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">sim_scores</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">results_df</span> <span class="o">=</span> <span class="n">results_df</span><span class="p">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">results_df</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">"RowID"</span><span class="p">,</span><span class="s">"Recommended Movie"</span><span class="p">,</span><span class="s">"Similarity Score"</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">results_df</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">movie_title</span> <span class="o">=</span> <span class="s">"pk"</span>
+<span class="n">recommendations_df</span> <span class="o">=</span> <span class="n">get_recommendations_new</span><span class="p">(</span><span class="n">movie_title</span><span class="p">,</span><span class="n">cosine_sim</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">temp_df</span> <span class="o">=</span> <span class="n">movies_data</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">movies_data</span><span class="p">.</span><span class="n">title</span><span class="p">.</span><span class="n">isin</span><span class="p">([</span><span class="n">movie_title</span><span class="p">]</span><span class="o">+</span><span class="nb">list</span><span class="p">(</span><span class="n">recommendations_df</span><span class="p">[</span><span class="s">"Recommended Movie"</span><span class="p">]))]</span>
+<span class="n">temp_df</span> <span class="o">=</span> <span class="n">temp_df</span><span class="p">[</span><span class="n">features</span><span class="p">].</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">temp_df</span> <span class="o">=</span> <span class="n">temp_df</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">recommendations_df</span><span class="p">,</span><span class="n">left_on</span><span class="o">=</span><span class="s">"title"</span><span class="p">,</span><span class="n">right_on</span> <span class="o">=</span> <span class="s">"Recommended Movie"</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s">"outer"</span><span class="p">)</span>
+<span class="n">temp_df</span> <span class="o">=</span> <span class="n">temp_df</span><span class="p">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s">"Similarity Score"</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">temp_df</span> <span class="o">=</span> <span class="n">temp_df</span><span class="p">[[</span><span class="s">"title"</span><span class="p">,</span><span class="s">"director"</span><span class="p">,</span><span class="s">"cast"</span><span class="p">,</span><span class="s">"listed_in"</span><span class="p">,</span><span class="s">"Similarity Score"</span><span class="p">]]</span>
+<span class="n">temp_df</span><span class="p">[</span><span class="s">"new"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">temp_df</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">temp_df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">temp_df</span><span class="p">.</span><span class="n">title</span><span class="o">==</span><span class="n">movie_title</span><span class="p">,</span><span class="s">'new'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">temp_df</span> <span class="o">=</span> <span class="n">temp_df</span><span class="p">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s">"new"</span><span class="p">).</span><span class="n">drop</span><span class="p">(</span><span class="s">'new'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">temp_df</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>director</th>
+      <th>cast</th>
+      <th>listed_in</th>
+      <th>Similarity Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>pk</td>
+      <td>Rajkumar Hirani</td>
+      <td>Aamir Khan, Anuskha Sharma, Sanjay Dutt, Saura...</td>
+      <td>Comedies, Dramas, International Movies</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3 idiots</td>
+      <td>Rajkumar Hirani</td>
+      <td>Aamir Khan, Kareena Kapoor, Madhavan, Sharman ...</td>
+      <td>Comedies, Dramas, International Movies</td>
+      <td>0.27</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>sanju</td>
+      <td>Rajkumar Hirani</td>
+      <td>Ranbir Kapoor, Vicky Kaushal, Paresh Rawal, So...</td>
+      <td>Dramas, International Movies</td>
+      <td>0.18</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>drive</td>
+      <td>Tarun Mansukhani</td>
+      <td>Jacqueline Fernandez, Sushant Singh Rajput, Bo...</td>
+      <td>Action &amp; Adventure, International Movies</td>
+      <td>0.17</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>taare zameen par</td>
+      <td>Aamir Khan</td>
+      <td>Aamir Khan, Darsheel Safary, Tanay Chheda, Tis...</td>
+      <td>Dramas, International Movies</td>
+      <td>0.15</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>madness in the desert</td>
+      <td>Satyajit Bhatkal</td>
+      <td>Aamir Khan, Ashutosh Gowariker</td>
+      <td>Documentaries, International Movies</td>
+      <td>0.12</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<font color="blue" size="4">
+<center>The above recommendations look pretty good for a starting point.</center>
+</font>
+
+<h2 id="16-summary-and-scope-for-improvement">1.6 Summary and Scope for Improvement</h2>
+
+<h3 id="161-summary">1.6.1 Summary</h3>
+<p>We started with data preprocessing steps that involved removing duplicate entries, missing value imputation stages, and feature extractions. Using web crawling, we used a unique approach to imputing missing data with high accuracy. Finally, we converted the preprocessed text into a TF-IDF matrix and calculated the scores using the cosine similarity function to create the final recommendation system.</p>
+
+<h3 id="162-scope-for-improvement">1.6.2 Scope for Improvement</h3>
+<p>The below pointers mention a few ways to improve the workflow of this notebook:</p>
+<ul>
+  <li>We did not analyze the <code class="language-plaintext highlighter-rouge">description</code> column, which contains a movie summary, but it can also be added to the existing system to generate more accurate recommendations.</li>
+  <li>Word clouds can also be plotted when analyzing the <code class="language-plaintext highlighter-rouge">description</code> column.</li>
+</ul>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+
+
+      </footer>
+
+      
+
+<section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/portfolio/Recommendation Engine/" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/portfolio/Recommendation Engine/" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <!-- <a href="https://plus.google.com/share?url=http://localhost:4000/portfolio/Recommendation Engine/" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/portfolio/Recommendation Engine/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+      
+
+
+  <nav class="pagination">
+    
+      <a href="http://localhost:4000/blogs/commodity-price-forecasting-part2/" class="pagination--pager" title="AI Augmented Commodity Price Forecasting - Part 2
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      
+        <h4 class="page__related-title">You may also enjoy</h4>
+      
+      <div class="grid__wrapper">
+        
+          
+
+
+
+
+<!-- <div style="text-align: justify">  -->
+<div class="grid__item">
+  <article class="archive__item">
+    
+
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/blogs/commodity-price-forecasting-part2/" rel="permalink">AI Augmented Commodity Price Forecasting - Part 2
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  less than 1 minute read
+	
+</p>
+    
+    
+    
+      <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-09-17T00:00:00-07:00">September 17, 2021</time></p>
+    
+
+    
+    <p class="archive__item-excerpt" itemprop="description"><p>Feature engineering, Prediction models for Price forecasting
+<u><strong><a href="http://localhost:4000/blogs/commodity-price-forecasting-part2/" rel="permalink"> Read more</a></strong></u></p></p>
+    
+
+    
+    
+
+  </article>
+</div>
+<!-- </div> -->
+        
+          
+
+
+
+
+<!-- <div style="text-align: justify">  -->
+<div class="grid__item">
+  <article class="archive__item">
+    
+
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="http://localhost:4000/blogs/commodity-price-forecasting-part1/" rel="permalink">AI Augmented Commodity Price Forecasting - Part 1
+</a>
+      
+    </h2>
+    
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  7 minute read
+	
+</p>
+    
+    
+    
+      <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-09-05T00:00:00-07:00">September 05, 2021</time></p>
+    
+
+    
+    <p class="archive__item-excerpt" itemprop="description"><p>Structuring a commodity price forecasting problem
+<u><strong><a href="http://localhost:4000/blogs/commodity-price-forecasting-part1/" rel="permalink"> Read more</a></strong></u></p></p>
+    
+
+    
+    
+
+  </article>
+</div>
+<!-- </div> -->
+        
+      </div>
+    </div>
+  
+</div>
+
+
+    <script src="http://localhost:4000/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79273-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+
